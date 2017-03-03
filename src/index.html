@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Front-End Library</title>
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="/style.css">
+
+    {#- Shortest and fastest shim for ie-old html5 elements, add only the elements you need, or replace this with Modernizr -#}
+    <!--[if lt IE 9]><script>'article main footer'.replace(/\w+/g,function(n){document.createElement(n)})</script><![endif]-->
+
+    <script>
+		(function(d){
+			if (!('querySelector' in d && 'addEventListener' in window)) return;
+			d.addEventListener('DOMContentLoaded', function() {
+				var b = d.createElement('script');
+				b.setAttribute('src', '/main.js'); // separate helpers file when using browserify
+				d.body.appendChild(b);
+			});
+		}(document));
+    </script>
+</head>
+<body>
+<main class="page">
+    <div class="wrap">
+        <input type="text" class="input" data-input>
+    </div>
+</main>
+</body>
+</html>
